@@ -1,11 +1,11 @@
 #!/bin/bash
 echo "Download and Deodexing... Please wait."
-wget -nc -q https://dl.google.com/dl/android/aosp/razorg-JLS36C-factory-fb03a89f.tgz
-tar zxf razorg-JLS36C-factory-fb03a89f.tgz
-cd razorg-JLS36C
-unzip image-razorg-JLS36C.zip
+wget -nc -q https://dl.google.com/dl/android/aosp/razorg-jls36i-factory-ecb320cd.tgz
+tar zxf razorg-jls36i-factory-ecb320cd.tgz
+cd razorg-jls36i
+unzip image-razorg-jls36i.zip
 cd ../
-./simg2img razorg-JLS36C/system.img system.ext4.img
+./simg2img razorg-jls36i/system.img system.ext4.img
 mkdir system
 mkdir tmp
 sudo mount -o loop -t ext4 system.ext4.img tmp
@@ -61,6 +61,6 @@ cp -a tmp/vendor/etc/audio_effects.conf system/vendor/etc/audio_effects.conf
 
 sudo umount tmp
 rm -rf tmp
-rm -rf razorg-JLS36C
+rm -rf razorg-jls36i
 rm system.ext4.img
 
